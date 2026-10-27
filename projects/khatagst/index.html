@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KhataGST case study · Siddharth Kumar Bhagat</title>
+  <meta name="description"
+    content="How KhataGST turns photos of GST bills into filing-ready GSTR-1 and GSTR-3B returns: integer-paise tax math, confidence-routed AI extraction and statute-grounded answers.">
+  <meta name="author" content="Siddharth Kumar Bhagat">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="KhataGST case study · Siddharth Kumar Bhagat">
+  <meta property="og:description"
+    content="From a photo of a bill to a filing-ready GST return, without letting an AI model decide a tax number.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%238ab4ff'%3ESB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../../" class="nav-logo" aria-label="Home">Siddharth<span>.</span></a>
+      <a href="../../#projects" class="nav-back">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6l-6 6 6 6" /></svg>
+        All projects
+      </a>
+    </div>
+  </header>
+
+  <main id="main" class="case">
+
+    <section class="case-hero">
+      <div class="container">
+        <p class="project-kicker">Case study · Mar 2026 — Present</p>
+        <h1 class="hero-name">KhataGST</h1>
+        <p class="hero-role">GST filing and input tax credit reconciliation for Indian small businesses.</p>
+        <p class="hero-summary">
+          Business owners photograph their bills. KhataGST turns them into invoices, computes the monthly GSTR-1 and
+          GSTR-3B returns, and answers GST questions with the section of the Act they come from.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/btw-itz-sid/KhataGST" class="btn btn-primary" target="_blank" rel="noopener">
+            View code on GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+          </a>
+        </div>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Solo: product, frontend, backend, deployment</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>In active development</dd>
+          </div>
+          <div>
+            <dt>Frontend</dt>
+            <dd>React, TypeScript, Vite, Tailwind</dd>
+          </div>
+          <div>
+            <dt>Backend</dt>
+            <dd>Fastify, PostgreSQL (Neon), Gemini API, S3 / R2, Railway</dd>
+          </div>
+        </dl>
+
+        <ul class="case-stats">
+          <li><span>11</span>API modules</li>
+          <li><span>11</span>app screens</li>
+          <li><span>5</span>SQL migrations</li>
+          <li><span>3</span>Gemini models in fallback</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2 class="section-title"><span>01</span>The problem</h2>
+        <p>
+          A registered business in India files GSTR-1 (its sales) by the 11th and GSTR-3B (a summary plus the tax
+          payment) by the 20th, every month. For most small traders the input is paper: supplier bills in a drawer and
+          sales in a notebook. The options are a monthly CA fee, or an evening of retyping bills into Excel where one
+          wrong digit means a return that doesn't reconcile or a credit that shouldn't have been claimed.
+        </p>
+        <p>
+          The goal I set: get from a photo of a bill to a filing-ready return with as little typing as possible,
+          <strong>without ever letting an AI model decide a tax number</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title"><span>02</span>Architecture</h2>
+
+        <div class="arch" role="img"
+          aria-label="Architecture: a React single-page app calls a Fastify API, which routes to three modules (bill scanner, GST engine, AI CA assistant) backed by PostgreSQL, object storage and the Gemini API.">
+          <div class="arch-layer">
+            <p class="arch-label">Client</p>
+            <div class="arch-box">
+              <h4>React + TypeScript SPA</h4>
+              <p>Scan, invoices, returns, exports, AI CA assistant</p>
+            </div>
+          </div>
+
+          <div class="arch-arrow" aria-hidden="true"></div>
+
+          <div class="arch-layer">
+            <p class="arch-label">API</p>
+            <div class="arch-box">
+              <h4>Fastify (TypeScript)</h4>
+              <p>JWT sessions · phone OTP · rate limiting · owner-scoped queries · Zod validation · Swagger docs</p>
+            </div>
+          </div>
+
+          <div class="arch-arrow" aria-hidden="true"></div>
+
+          <div class="arch-layer">
+            <p class="arch-label">Core</p>
+            <div class="arch-row">
+              <div class="arch-box arch-ai">
+                <h4>Bill scanner</h4>
+                <p>Gemini Vision → fixed JSON schema → normalise → confidence routing</p>
+              </div>
+              <div class="arch-box arch-core">
+                <h4>GST engine</h4>
+                <p>Pure functions in integer paise. GSTR-1 and GSTR-3B computation</p>
+              </div>
+              <div class="arch-box arch-ai">
+                <h4>AI CA assistant</h4>
+                <p>Retrieve statute sections → grounded prompt → answer with citations</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-arrow" aria-hidden="true"></div>
+
+          <div class="arch-layer">
+            <p class="arch-label">Data</p>
+            <div class="arch-row">
+              <div class="arch-box">
+                <h4>PostgreSQL (Neon)</h4>
+                <p>Invoices, parties, returns, OTPs, audit log</p>
+              </div>
+              <div class="arch-box">
+                <h4>S3 / Cloudflare R2</h4>
+                <p>Bill images, with local-disk fallback</p>
+              </div>
+              <div class="arch-box">
+                <h4>External</h4>
+                <p>Gemini API · Razorpay · Fast2SMS · Sentry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="arch-legend"><span class="dot-ai"></span>Uses an LLM <span class="dot-core"></span>Deterministic, no LLM</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2 class="section-title"><span>03</span>Key decisions</h2>
+
+        <article class="decision">
+          <h3>Money is an integer, always</h3>
+          <p>
+            Every amount is stored and computed in paise, so ₹100.50 is <code>10050</code>. With floating point,
+            <code>0.1 + 0.2</code> is not <code>0.3</code>, and on a tax return that turns into a rupee that doesn't
+            reconcile.
+          </p>
+          <p>
+            The subtle case is an intra-state sale, where tax splits equally into CGST and SGST. An odd number of paise
+            can't split evenly, and rounding both halves can create or lose a paisa. Instead, SGST takes the remainder,
+            so the two parts always add back to the total:
+          </p>
+          <figure class="code">
+            <figcaption>backend/src/services/gstEngine.ts</figcaption>
+<pre><code><span class="k">const</span> totalTax = Math.<span class="f">round</span>(taxableValuePaise * gstRate / <span class="n">100</span>);
+<span class="k">const</span> half = Math.<span class="f">round</span>(totalTax / <span class="n">2</span>);
+<span class="k">return</span> {
+  cgst: half,
+  sgst: totalTax - half, <span class="c">// remainder, so cgst + sgst === totalTax</span>
+  igst: <span class="n">0</span>,
+  total: taxableValuePaise + totalTax,
+};</code></pre>
+          </figure>
+        </article>
+
+        <article class="decision">
+          <h3>The model reads, code computes</h3>
+          <p>
+            Gemini only extracts fields from the bill image into a fixed schema: GSTIN, invoice number, date, taxable
+            value, CGST, SGST, IGST and HSN code. Everything after that (the tax split, B2B versus B2C grouping, the
+            GSTR-1 tables and GSTR-3B totals) is plain TypeScript that returns the same output for the same input and
+            can be unit-tested.
+          </p>
+          <p>
+            Model output is treated as untrusted input. Dates are normalised to ISO format, GSTINs upper-cased, numbers
+            coerced and rounded to paise, and confidence clamped to 0–100. If the JSON comes back malformed, a repair
+            pass strips code fences, fixes smart quotes, quotes bare keys and drops trailing commas before the scan is
+            given up on.
+          </p>
+        </article>
+
+        <article class="decision">
+          <h3>Confidence decides how much the user has to check</h3>
+          <p>
+            Every extraction carries a confidence score, and that score decides the next step:
+          </p>
+          <ul class="routing">
+            <li><span class="pill pill-green">&gt; 85</span>Fields are auto-filled</li>
+            <li><span class="pill pill-amber">65 – 85</span>Flagged for review</li>
+            <li><span class="pill pill-red">&lt; 65</span>Manual entry</li>
+          </ul>
+          <p>
+            If Gemini fails entirely, from quota limits to network errors, the scan is still saved and the user gets
+            an empty review form instead of an error screen. The scanner also asks the API which models the key can
+            use and walks a fallback chain (2.5 Flash, then 2.5 Flash-Lite, then 2.0 Flash), so a retired model name
+            doesn't take the feature down.
+          </p>
+        </article>
+
+        <article class="decision">
+          <h3>Answers cite the law, or fall back to it</h3>
+          <p>
+            The AI CA assistant first retrieves the relevant statutory sections: Section 16 (conditions for input tax
+            credit), Section 17(5) (blocked credits), Rules 88A and 86B, Section 50 (interest) and reverse charge. It
+            puts them in the prompt and returns the answer together with the sections it relied on. If the model is
+            unavailable, it returns those sections directly rather than nothing.
+          </p>
+          <p>
+            For expense checks under Section 17(5), deterministic rules run first and the model refines the result in
+            JSON mode. If the model call fails, the rule-based result stands.
+          </p>
+          <p class="note">
+            <strong>Current state:</strong> retrieval is keyword-weighted over a curated set of sections. The pgvector
+            table (768-dimension embeddings with an IVFFlat cosine index) is in place; generating embeddings and
+            switching to semantic search is the next step.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title"><span>04</span>Security &amp; reliability</h2>
+        <ul class="checklist">
+          <li><strong>Phone OTP login</strong> with a 60-second resend cooldown per number and a 5-attempt limit before a
+            new OTP is required. Sessions use JWT.</li>
+          <li><strong>Owner-scoped data.</strong> Scan and invoice queries join through the business owner, so
+            guessing another user's ID returns nothing.</li>
+          <li><strong>Payments</strong> through Razorpay, with HMAC-SHA256 verification on both checkout signatures and
+            webhooks.</li>
+          <li><strong>API-wide rate limiting</strong>, role guards on admin routes, and an upload whitelist (JPG, PNG,
+            WEBP, PDF).</li>
+          <li><strong>Observability:</strong> Sentry error tracking, a <code>/health</code> endpoint that probes the
+            database, and Swagger API docs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title"><span>05</span>What's next</h2>
+        <ul class="checklist next">
+          <li><strong>Semantic retrieval.</strong> Embed the statute sections with Gemini and switch the assistant to
+            pgvector cosine search.</li>
+          <li><strong>GSTR-2B reconciliation.</strong> Match purchase invoices against what suppliers actually filed,
+            to catch credit that would otherwise be lost.</li>
+          <li><strong>An evaluation set of real bills</strong> to measure extraction accuracy per field, so the 85 / 65
+            confidence thresholds are tuned on data rather than chosen.</li>
+        </ul>
+
+        <div class="case-end">
+          <a href="../../#projects" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6l-6 6 6 6" /></svg>
+            Back to all projects
+          </a>
+          <a href="mailto:siddharthraj600@gmail.com" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Siddharth Kumar Bhagat</p>
+      <a href="#main">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

@@ -4,318 +4,351 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siddharth Kumar Bhagat</title>
+  <title>Siddharth Kumar Bhagat · Full-Stack Engineer</title>
+  <meta name="description"
+    content="Siddharth Kumar Bhagat — final-year B.Tech CSE student and full-stack engineer building with React, TypeScript, Node.js, PostgreSQL and LLMs.">
+  <meta name="author" content="Siddharth Kumar Bhagat">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Siddharth Kumar Bhagat · Full-Stack Engineer">
+  <meta property="og:description"
+    content="Full-stack products end to end: React and TypeScript on the front, Node.js and PostgreSQL on the back, with LLM features where they solve a real problem.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%238ab4ff'%3ESB%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav id="navbar">
-    <div class="nav-logo">skb<span>.</span>dev</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" onclick="closeMenu()">Home</a></li>
-      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
-      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-      <li><a href="#dsa" onclick="closeMenu()">DSA</a></li>
-      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-
-  <section id="home">
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="dot"></span>
-        Available for Internships
-      </div>
-      <h1 class="hero-name">Siddharth<br>Kumar Bhagat</h1>
-      <div class="hero-typing">
-        I am a <span id="typingText"></span><span class="cursor">|</span>
-      </div>
-      <p class="hero-desc">
-        CS Undergrad at Galgotias University building real-world AI and web projects.
-        Currently learning full stack development and sharpening DSA on LeetCode.
-      </p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-secondary">Get In Touch</a>
-      </div>
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo" aria-label="Home">Siddharth<span>.</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
     </div>
-    <div class="hero-visual">
-      <div class="code-card">
-        <div class="code-dots">
-          <span></span><span></span><span></span>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="status"><span class="status-dot"></span>Open to full-time SDE roles · Graduating June 2027</p>
+        <h1 class="hero-name">Siddharth Kumar Bhagat</h1>
+        <p class="hero-role">Full-stack engineer building products end to end.</p>
+        <p class="hero-summary">
+          Final-year B.Tech CSE student. I work with React and TypeScript on the front, Node.js and PostgreSQL on
+          the back, and add LLM features where they solve a real problem. Currently interning at
+          <strong>Repeat AI</strong> on a B2B procurement app for restaurants, and building
+          <strong>KhataGST</strong>, a GST compliance SaaS for Indian MSMEs.
+        </p>
+        <div class="hero-actions">
+          <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+            Download resume
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" /></svg>
+          </a>
+          <a href="mailto:siddharthraj600@gmail.com" class="btn btn-ghost">siddharthraj600@gmail.com</a>
         </div>
-        <pre class="code-block"><span class="c-gray">// Siddharth's stack</span>
-<span class="c-blue">const</span> <span class="c-white">dev</span> = {
-  <span class="c-cyan">name</span>: <span class="c-green">"Siddharth"</span>,
-  <span class="c-cyan">skills</span>: [
-    <span class="c-green">"Python"</span>, <span class="c-green">"Java"</span>,
-    <span class="c-green">"Node.js"</span>, <span class="c-green">"React"</span>
-  ],
-  <span class="c-cyan">building</span>: <span class="c-green">"KhataGST"</span>,
-  <span class="c-cyan">learning</span>: <span class="c-green">"Full Stack"</span>,
-  <span class="c-cyan">lc_solved</span>: <span class="c-blue">55+</span>
-};</pre>
+        <ul class="social" aria-label="Profiles">
+          <li>
+            <a href="https://github.com/btw-itz-sid" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener" aria-label="LeetCode">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                <path d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.22l-2.6 2.78a5.3 5.3 0 0 0-1.27 2.07 5.6 5.6 0 0 0-.2 2.3 5.3 5.3 0 0 0 1.49 3.13l4.36 4.36a5.4 5.4 0 0 0 7.65.03l2.6-2.6a1.37 1.37 0 1 0-1.94-1.94l-2.6 2.6a2.68 2.68 0 0 1-3.78-.02l-4.36-4.36a2.6 2.6 0 0 1-.03-3.67l2.6-2.79 5.4-5.78A1.37 1.37 0 0 0 13.48 0Zm-2.87 13.38a1.37 1.37 0 1 0 0 2.74h9.68a1.37 1.37 0 1 0 0-2.74h-9.68Z" />
+              </svg>
+              <span>LeetCode</span>
+            </a>
+          </li>
+          <li class="social-meta">Greater Noida, India</li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <div class="section-container">
-      <div class="section-tag">// skills</div>
-      <h2 class="section-title">Tech Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">🐍</div>
-          <div class="skill-name">Python</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:89%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">☕</div>
-          <div class="skill-name">Java</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:86%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🌐</div>
-          <div class="skill-name">HTML & CSS</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:90%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">⚡</div>
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:68%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🖥️</div>
-          <div class="skill-name">Node.js</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:60%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🧠</div>
-          <div class="skill-name">TensorFlow</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:70%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🗄️</div>
-          <div class="skill-name">PostgreSQL</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:65%"></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔢</div>
-          <div class="skill-name">DSA</div>
-          <div class="skill-bar">
-            <div class="skill-fill" style="width:87%"></div>
-          </div>
-        </div>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <h2 class="section-title"><span>01</span>Experience</h2>
+
+        <ol class="timeline">
+          <li class="role reveal">
+            <div class="role-meta">
+              <span class="role-date">Jul 2026 — Present</span>
+            </div>
+            <div class="role-body">
+              <h3>Intern <span class="at">@ Repeat AI</span></h3>
+              <p class="role-sub">B2B procurement app for restaurants and cloud kitchens</p>
+              <ul class="bullets">
+                <li>Main contributor to the buyer and vendor apps (React Native, TypeScript, Node.js) with
+                  <strong>70+ commits and 6 merged PRs</strong>.</li>
+                <li>Built the WhatsApp ordering bot: PAN registration, voice replies, cart reconciliation, UPI payments
+                  and delivery notifications.</li>
+                <li>Wrote a WebSocket gateway that keeps order status, chat and driver dispatch in sync between the buyer
+                  and vendor apps.</li>
+                <li>Parsed vendor rate cards from photos and PDFs into inventory using Mistral OCR, with Gemini as
+                  fallback.</li>
+                <li>Closed checkout launch blockers: server-side price recalculation so the client can't tamper with
+                  totals, plus token refresh, phone OTP validation and role guards.</li>
+                <li>Wrote the technical architecture (knowledge layer, negotiation engine) and worked with the founders
+                  on MVP scope and vendor onboarding.</li>
+              </ul>
+              <ul class="tags">
+                <li>React Native</li><li>TypeScript</li><li>Node.js</li><li>WebSockets</li><li>Mistral OCR</li><li>Gemini</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="role reveal">
+            <div class="role-meta">
+              <span class="role-date">Jul — Sep 2025</span>
+            </div>
+            <div class="role-body">
+              <h3>Student Intern <span class="at">@ EduSkills Foundation</span></h3>
+              <p class="role-sub">Google for Developers · Remote</p>
+              <ul class="bullets">
+                <li>Completed the Google AI/ML curriculum and built projects on Google Cloud AI services through REST
+                  APIs.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="role reveal">
+            <div class="role-meta">
+              <span class="role-date">Jul — Aug 2025</span>
+            </div>
+            <div class="role-body">
+              <h3>Student Intern <span class="at">@ CSRBOX</span></h3>
+              <p class="role-sub">Remote</p>
+              <ul class="bullets">
+                <li>Worked on AI-driven research tasks for NGO projects.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <div class="section-container">
-      <div class="section-tag">// projects</div>
-      <h2 class="section-title">What I've Built</h2>
-      <div class="projects-grid">
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title"><span>02</span>Projects</h2>
 
-        <div class="project-card featured">
-          <div class="project-icon">🐄</div>
-          <h3>Cattle Breed Recognition</h3>
-          <p>Custom CNN model trained on 20+ cattle breeds using TensorFlow achieving 87% accuracy. Python backend for
-            real-time breed prediction.</p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>CNN</span>
-            <span>Google Colab</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link">GitHub →</a>
-          </div>
+        <article class="project project-featured reveal">
+          <header class="project-head">
+            <div>
+              <p class="project-kicker">Mar 2026 — Present · In active development</p>
+              <h3>KhataGST</h3>
+              <p class="project-tagline">GST filing and ITC reconciliation for Indian MSMEs</p>
+            </div>
+            <a class="project-link" href="https://github.com/btw-itz-sid/KhataGST" target="_blank" rel="noopener">
+              GitHub
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+            </a>
+          </header>
+          <ul class="bullets">
+            <li>Gemini Vision turns photos of invoices into structured records (GSTIN, tax split, vendor details),
+              validated on both client and server.</li>
+            <li>GSTR-1 and GSTR-3B are computed in plain deterministic code using <strong>integer paise instead of
+                floats</strong>, with Excel/CSV export.</li>
+            <li>AI CA assistant grounded in GST law (CGST Act Sections 16, 17(5) and 50; Rules 88A and 86B) that returns
+              the exact sections behind every answer.</li>
+            <li>Confidence-routed extraction with a fallback chain across Gemini models, so a failed scan becomes a
+              review form, never an error.</li>
+          </ul>
+          <ul class="tags">
+            <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Gemini API</li><li>AWS S3</li><li>Railway</li>
+          </ul>
+          <a class="case-link" href="projects/khatagst/">
+            Read the case study
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" /></svg>
+          </a>
+        </article>
+
+        <div class="project-grid">
+          <article class="project reveal">
+            <header class="project-head">
+              <div>
+                <h3>Smart Interview Assistant</h3>
+                <p class="project-tagline">Resume analysis and mock interviews</p>
+              </div>
+              <a class="project-link" href="https://github.com/btw-itz-sid/smart-interview-assistant" target="_blank" rel="noopener">
+                GitHub
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+              </a>
+            </header>
+            <ul class="bullets">
+              <li>Resume analyzer that scores keywords, quantified results, formatting and fit for the target role.</li>
+              <li>Reads a job description and builds mock interview questions around it, with rubric-based feedback
+                after each answer.</li>
+            </ul>
+            <ul class="tags">
+              <li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Recharts</li><li>Vercel</li>
+            </ul>
+          </article>
+
+          <article class="project reveal">
+            <header class="project-head">
+              <div>
+                <h3>PromptGuard AI</h3>
+                <p class="project-tagline">Prompt injection firewall for LLM apps</p>
+              </div>
+              <a class="project-link" href="https://github.com/btw-itz-sid/promptguard-ai" target="_blank" rel="noopener">
+                GitHub
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+              </a>
+            </header>
+            <ul class="bullets">
+              <li>Proxy that checks every prompt before it reaches the model: text normalization, regex heuristics, a
+                semantic classifier, then a risk score.</li>
+              <li>Targets prompt injection, system prompt extraction, roleplay jailbreaks and delimiter tricks from the
+                OWASP LLM Top 10; includes an audit-log dashboard.</li>
+            </ul>
+            <ul class="tags">
+              <li>Node.js</li><li>Express</li><li>TypeScript</li>
+            </ul>
+          </article>
         </div>
 
-        <div class="project-card">
-          <div class="project-icon">🛡️</div>
-          <h3>promptguard-AI Firewall</h3>
-          <p>Real-time AI prompt injection firewall detecting 9 threat categories including jailbreaks, XSS, and encoded
-            payloads.</p>
-          <div class="project-tags">
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/btw-itz-sid/promptguard-ai" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">🤖</div>
-          <h3>Zoro AI Chatbot</h3>
-          <p>Local AI chatbot using Ollama and Phi model. Full conversation history, PDF understanding, zero API cost.
-          </p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Ollama</span>
-            <span>Streamlit</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-badge">In Progress</div>
-          <div class="project-icon">📊</div>
-          <h3>KhataGST</h3>
-          <p>AI-powered GST filing SaaS for Indian MSMEs. Bill scanning with Claude Vision, auto GSTR computation,
-            WhatsApp alerts.</p>
-          <div class="project-tags">
-            <span>Node.js</span>
-            <span>PostgreSQL</span>
-            <span>Claude AI</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/btw-itz-sid/KhataGST" target="_blank" class="proj-link">GitHub →</a>
-          </div>
-        </div>
-
+        <a class="more-link" href="https://github.com/btw-itz-sid?tab=repositories" target="_blank" rel="noopener">
+          More on GitHub
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" /></svg>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="dsa">
-    <div class="section-container">
-      <div class="section-tag">// dsa</div>
-      <h2 class="section-title">DSA Progress</h2>
-      <div class="dsa-card">
-        <div class="dsa-left">
-          <div class="lc-logo">LC</div>
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title"><span>03</span>Skills</h2>
+        <dl class="skills">
+          <div class="skill-row reveal">
+            <dt>Languages</dt>
+            <dd><ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li></ul></dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Frontend</dt>
+            <dd><ul class="tags"><li>React</li><li>Next.js</li><li>React Native</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li></ul></dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Backend</dt>
+            <dd><ul class="tags"><li>Node.js</li><li>Fastify</li><li>Express</li><li>REST APIs</li><li>WebSockets</li><li>JWT &amp; OTP auth</li></ul></dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Data</dt>
+            <dd><ul class="tags"><li>PostgreSQL</li><li>pgvector</li><li>Prisma</li><li>Supabase</li></ul></dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>AI</dt>
+            <dd><ul class="tags"><li>Gemini &amp; OpenAI APIs</li><li>RAG</li><li>Structured extraction</li><li>Prompt design</li><li>Ollama</li><li>LangChain</li></ul></dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Tools</dt>
+            <dd><ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Docker</li><li>Railway</li><li>Vercel</li><li>AWS S3</li></ul></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EDUCATION & ACHIEVEMENTS -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title"><span>04</span>Education &amp; Achievements</h2>
+
+        <div class="edu reveal">
           <div>
-            <h3>LeetCode</h3>
-            <p>Actively solving problems — focused on Arrays, Hashing, Two Pointers and Binary Search.</p>
-            <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" class="btn-primary"
-              style="margin-top:16px;display:inline-block">View Profile →</a>
+            <h3>Galgotias University, Greater Noida</h3>
+            <p>B.Tech, Computer Science &amp; Engineering</p>
           </div>
+          <span class="role-date">Oct 2023 — Jun 2027</span>
         </div>
-        <div class="dsa-stats">
-          <div class="dsa-stat">
-            <div class="dsa-num">55</div>
-            <div class="dsa-label">Solved</div>
-          </div>
-          <div class="dsa-stat">
-            <div class="dsa-num">4</div>
-            <div class="dsa-label">Hard</div>
-          </div>
-          <div class="dsa-stat">
-            <div class="dsa-num">200+</div>
-            <div class="dsa-label">Goal</div>
-          </div>
+
+        <ul class="achievements">
+          <li class="reveal">
+            <span class="ach-stat">87%</span>
+            <div>
+              <h4>Smart India Hackathon 2025 — Qualifier</h4>
+              <p>Cattle breed recognition with a CNN.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="ach-stat">R2</span>
+            <div>
+              <h4>HackWithInfy 2025</h4>
+              <p>Qualified for Round 2.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="ach-stat">150+</span>
+            <div>
+              <h4>LeetCode problems solved in Java</h4>
+              <p>DP, graphs, trees, sliding window.
+                <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener">View profile</a></p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="ach-stat">GDG</span>
+            <div>
+              <h4>Google AI/ML Virtual Internship</h4>
+              <p>Google Developer Groups, Aug 2025.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title"><span>05</span>Contact</h2>
+        <p class="contact-lead">I'm looking for full-time software engineering roles starting 2027. If you're hiring or
+          want to talk about something I've built, email is the fastest way to reach me.</p>
+        <a class="contact-email" href="mailto:siddharthraj600@gmail.com">siddharthraj600@gmail.com</a>
+        <div class="hero-actions">
+          <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">View resume</a>
+          <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/btw-itz-sid" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
+    </section>
 
-      <div class="achievement-card">
-        <div class="achievement-icon">🏆</div>
-        <div>
-          <h3>Smart India Hackathon 2025</h3>
-          <p>Participated in Pre-Qualifier SIH 2025 at Galgotias University. Built AI-powered Cattle Breed Recognition
-            System using TensorFlow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <section id="contact">
-    <div class="section-container">
-      <div class="section-tag">// contact</div>
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <p>I'm looking for internship opportunities. Whether you have a question or just want to say hi — my inbox is
-            open!</p>
-          <div class="contact-links">
-            <a href="mailto:siddharthraj600@gmail.com" class="contact-link">
-              <span>📧</span> siddharthraj600@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat-a8239a282/" target="_blank"
-              class="contact-link">
-              <span>💼</span> LinkedIn
-            </a>
-            <a href="https://github.com/btw-itz-sid" target="_blank" class="contact-link">
-              <span>🐙</span> GitHub
-            </a>
-            <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" class="contact-link">
-              <span>💻</span> LeetCode
-            </a>
-          </div>
-        </div>
-        <form id="contactForm" class="contact-form">
-          <div class="form-group">
-            <input type="text" id="nameInput" placeholder="Your Name" />
-            <span class="form-error" id="nameError"></span>
-          </div>
-          <div class="form-group">
-            <input type="email" id="emailInput" placeholder="Your Email" />
-            <span class="form-error" id="emailError"></span>
-          </div>
-          <div class="form-group">
-            <textarea id="msgInput" placeholder="Your Message" rows="4"></textarea>
-            <span class="form-error" id="msgError"></span>
-          </div>
-          <button type="submit" class="btn-primary" style="width:100%">Send Message</button>
-          <div class="form-success" id="formSuccess">✅ Message sent! I'll get back to you soon.</div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Built with HTML, CSS & JavaScript — by Siddharth Kumar Bhagat</p>
-    <p style="margin-top:8px;font-size:12px">© 2026 · All rights reserved</p>
-
-    <div style="margin-top:24px;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;">
-
-      <div style="text-align:center;">
-        <img src="Zoro.jpg" alt="Zoro"
-          style="width:80px;height:80px;object-fit:cover;object-position:top;border-radius:50%;border:2px solid #4361ee;filter:grayscale(20%);" />
-        <p style="margin-top:8px;font-family:'Fira Code',monospace;font-size:11px;color:#4361ee;">
-          ⚔️ "Nothing happened."
-        </p>
-      </div>
-
-      <div style="font-family:'Fira Code',monospace;font-size:13px;color:#555577;">
-        ☠️
-      </div>
-
-      <div style="text-align:center;">
-        <img src="Luffy.jpg" alt="Luffy"
-          style="width:80px;height:80px;object-fit:cover;object-position:top center;border-radius:50%;border:2px solid #e63946;filter:grayscale(20%);" />
-        <p style="margin-top:8px;font-family:'Fira Code',monospace;font-size:11px;color:#e63946;">
-          🥩 "I'm gonna be King!"
-        </p>
-      </div>
-
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Siddharth Kumar Bhagat</p>
+      <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
