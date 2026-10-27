@@ -14,7 +14,7 @@
   <meta property="og:description"
     content="Full-stack products end to end: React and TypeScript on the front, Node.js and PostgreSQL on the back, with LLM features where they solve a real problem.">
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171717'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -26,8 +26,6 @@
     (function () {
       var t = localStorage.getItem("theme");
       if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
-      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-        document.documentElement.setAttribute("data-theme", "dark");
     })();
   </script>
 </head>
@@ -128,23 +126,23 @@
           <p class="snapshot-label">Right now</p>
           <ul class="now-list">
             <li>
-              <span class="now-icon c-indigo" aria-hidden="true">
+              <span class="now-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7" /></svg>
               </span>
               <div><strong>Intern, Repeat AI</strong>Buyer &amp; vendor apps, WhatsApp ordering bot</div>
             </li>
             <li>
-              <span class="now-icon c-green" aria-hidden="true">
+              <span class="now-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 8h10M7 12h6" /></svg>
               </span>
               <div><strong>Building KhataGST</strong>GST filing SaaS for Indian MSMEs</div>
             </li>
           </ul>
           <ul class="snapshot-stats">
-            <li class="c-indigo"><span>70+</span>commits at Repeat AI</li>
-            <li class="c-green"><span>150+</span>LeetCode in Java</li>
-            <li class="c-amber"><span>SIH</span>2025 qualifier</li>
-            <li class="c-violet"><span>2027</span>B.Tech CSE</li>
+            <li><span>70+</span>commits at Repeat AI</li>
+            <li><span>150+</span>LeetCode in Java</li>
+            <li><span>SIH</span>2025 qualifier</li>
+            <li><span>2027</span>B.Tech CSE</li>
           </ul>
         </aside>
       </div>
@@ -153,12 +151,12 @@
     <section class="section" id="experience">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow c-indigo">Experience</p>
+          <p class="eyebrow">Experience</p>
           <h2 class="section-title">Where I’ve been shipping.</h2>
         </div>
 
         <ol class="timeline">
-          <li class="role reveal c-indigo">
+          <li class="role reveal">
             <div class="company-badge" aria-hidden="true">R</div>
             <div class="role-body">
               <div class="role-head">
@@ -186,7 +184,7 @@
             </div>
           </li>
 
-          <li class="role role-compact reveal c-sky">
+          <li class="role role-compact reveal">
             <div class="company-badge" aria-hidden="true">G</div>
             <div class="role-body">
               <div class="role-head">
@@ -200,7 +198,7 @@
             </div>
           </li>
 
-          <li class="role role-compact reveal c-amber">
+          <li class="role role-compact reveal">
             <div class="company-badge" aria-hidden="true">C</div>
             <div class="role-body">
               <div class="role-head">
@@ -220,13 +218,13 @@
     <section class="section section-alt" id="projects">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow c-green">Selected work</p>
+          <p class="eyebrow">Selected work</p>
           <h2 class="section-title">Things I’ve built.</h2>
           <p class="section-lead">Three products, each with a real constraint: tax math that must reconcile, interviews
             that need a rubric, prompts that must not jailbreak the model.</p>
         </div>
 
-        <article class="project project-featured reveal c-green">
+        <article class="project project-featured reveal">
           <div class="project-visual" aria-hidden="true">
             <div class="mock-card">
               <div class="mock-head">
@@ -277,7 +275,7 @@
         </article>
 
         <div class="project-grid">
-          <article class="project reveal c-violet">
+          <article class="project reveal">
             <div class="project-visual" aria-hidden="true">
               <div class="mock-card mock-score">
                 <div class="ring" style="--p: 82"><span>82</span></div>
@@ -310,7 +308,7 @@
             </div>
           </article>
 
-          <article class="project reveal c-rose">
+          <article class="project reveal">
             <div class="project-visual" aria-hidden="true">
               <div class="mock-card mock-log">
                 <div class="log-row log-allow"><span class="log-tag">Allow</span><span>Summarise this invoice</span></div>
@@ -352,46 +350,46 @@
     <section class="section" id="skills">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow c-violet">Skills</p>
+          <p class="eyebrow">Skills</p>
           <h2 class="section-title">What I work with.</h2>
         </div>
-        <div class="skills">
-          <article class="skill-card reveal c-indigo">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 17l-5-5 5-5M16 7l5 5-5 5" /></svg></span>Languages</h3>
-            <ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li></ul>
-          </article>
-          <article class="skill-card reveal c-sky">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M8 21h8" /></svg></span>Frontend</h3>
-            <ul class="tags"><li>React</li><li>Next.js</li><li>React Native</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li></ul>
-          </article>
-          <article class="skill-card reveal c-green">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16M4 14h16M10 4v16" /></svg></span>Backend</h3>
-            <ul class="tags"><li>Node.js</li><li>Fastify</li><li>Express</li><li>REST APIs</li><li>WebSockets</li><li>JWT &amp; OTP</li></ul>
-          </article>
-          <article class="skill-card reveal c-amber">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" /></svg></span>Data</h3>
-            <ul class="tags"><li>PostgreSQL</li><li>pgvector</li><li>Prisma</li><li>Supabase</li></ul>
-          </article>
-          <article class="skill-card reveal c-violet">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.6H21l-5.4 4 2.1 6.4L12 16.6 6.3 20l2.1-6.4L3 9.6h6.8z" /></svg></span>AI</h3>
-            <ul class="tags"><li>Gemini &amp; OpenAI</li><li>RAG</li><li>Structured extraction</li><li>Ollama</li><li>LangChain</li></ul>
-          </article>
-          <article class="skill-card reveal c-rose">
-            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z" /></svg></span>Tools</h3>
-            <ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Docker</li><li>Railway</li><li>Vercel</li><li>AWS S3</li></ul>
-          </article>
-        </div>
+        <dl class="skill-list">
+          <div class="skill-row reveal">
+            <dt>Languages</dt>
+            <dd>TypeScript, JavaScript, Python, Java, SQL</dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Frontend</dt>
+            <dd>React, Next.js, React Native, Tailwind CSS, HTML, CSS</dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Backend</dt>
+            <dd>Node.js, Fastify, Express, REST APIs, WebSockets, JWT &amp; OTP auth</dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Data</dt>
+            <dd>PostgreSQL, pgvector, Prisma, Supabase</dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>AI</dt>
+            <dd>Gemini &amp; OpenAI APIs, RAG, structured extraction, prompt design, Ollama, LangChain</dd>
+          </div>
+          <div class="skill-row reveal">
+            <dt>Tools</dt>
+            <dd>Git, GitHub Actions, Docker, Railway, Vercel, AWS S3</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
     <section class="section section-alt" id="education">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow c-amber">About</p>
+          <p class="eyebrow">About</p>
           <h2 class="section-title">Education &amp; a few marks on the way.</h2>
         </div>
 
-        <div class="edu reveal c-indigo">
+        <div class="edu reveal">
           <div class="company-badge" aria-hidden="true">G</div>
           <div class="edu-text">
             <h3>Galgotias University, Greater Noida</h3>
@@ -401,23 +399,23 @@
         </div>
 
         <ul class="achievements">
-          <li class="reveal c-green">
+          <li class="reveal">
             <span class="ach-stat">87%</span>
             <h4>Smart India Hackathon 2025</h4>
             <p>Qualifier. Cattle breed recognition with a CNN.</p>
           </li>
-          <li class="reveal c-amber">
+          <li class="reveal">
             <span class="ach-stat">R2</span>
             <h4>HackWithInfy 2025</h4>
             <p>Qualified for Round 2.</p>
           </li>
-          <li class="reveal c-indigo">
+          <li class="reveal">
             <span class="ach-stat">150+</span>
             <h4>LeetCode in Java</h4>
             <p>DP, graphs, trees, sliding window.
               <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener">Profile</a></p>
           </li>
-          <li class="reveal c-sky">
+          <li class="reveal">
             <span class="ach-stat">GDG</span>
             <h4>Google AI/ML Internship</h4>
             <p>Google Developer Groups, Aug 2025.</p>
@@ -429,7 +427,7 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-card">
-          <p class="eyebrow c-indigo">Contact</p>
+          <p class="eyebrow">Contact</p>
           <h2 class="section-title">Let’s work together.</h2>
           <p class="contact-lead">I'm looking for full-time software engineering roles starting 2027. If you're hiring
             or want to talk about something I've built, email is the fastest way to reach me.</p>

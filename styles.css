@@ -10,28 +10,25 @@
   --muted: #5a554f;
   --faint: #8c867e;
 
-  --accent: #4f46e5;
-  --accent-hover: #4338ca;
-  --accent-soft: #eeeffe;
+  --accent: #171717;
+  --accent-hover: #000000;
+  --accent-soft: #f3f1ec;
   --on-accent: #ffffff;
 
-  --indigo: #4f46e5;
-  --indigo-soft: #eeeffe;
-  --green: #047857;
-  --green-soft: #e5f4ec;
-  --amber: #b45309;
-  --amber-soft: #fcf1e0;
-  --rose: #e11d48;
-  --rose-soft: #fdebee;
-  --violet: #7c3aed;
-  --violet-soft: #f2ecfe;
-  --sky: #0369a1;
-  --sky-soft: #e4f1f9;
+  --c: var(--accent);
+  --c-soft: var(--surface-2);
 
-  --blob-1: #c7d2fe;
-  --blob-2: #fde68a;
-  --blob-3: #a7f3d0;
-  --blob-opacity: 0.55;
+  --green: #3f6b4a;
+  --green-soft: #eef3ef;
+  --amber: #8a6a2f;
+  --amber-soft: #f4f0e8;
+  --rose: #8f4a52;
+  --rose-soft: #f5eef0;
+
+  --blob-1: #e8e4dc;
+  --blob-2: #efebe3;
+  --blob-3: #e4e0d8;
+  --blob-opacity: 0.7;
 
   --shadow-sm: 0 1px 2px rgba(28, 26, 23, 0.04), 0 1px 3px rgba(28, 26, 23, 0.05);
   --shadow-md: 0 2px 6px rgba(28, 26, 23, 0.04), 0 16px 40px rgba(28, 26, 23, 0.07);
@@ -50,28 +47,25 @@
   --muted: #a3a3ad;
   --faint: #74747e;
 
-  --accent: #8b8fff;
-  --accent-hover: #a5a8ff;
-  --accent-soft: rgba(139, 143, 255, 0.12);
+  --accent: #ededf0;
+  --accent-hover: #ffffff;
+  --accent-soft: #1c1c22;
   --on-accent: #0e0e11;
 
-  --indigo: #8b8fff;
-  --indigo-soft: rgba(139, 143, 255, 0.12);
-  --green: #34d399;
-  --green-soft: rgba(52, 211, 153, 0.12);
-  --amber: #fbbf24;
-  --amber-soft: rgba(251, 191, 36, 0.12);
-  --rose: #fb7185;
-  --rose-soft: rgba(251, 113, 133, 0.12);
-  --violet: #b794f6;
-  --violet-soft: rgba(183, 148, 246, 0.12);
-  --sky: #38bdf8;
-  --sky-soft: rgba(56, 189, 248, 0.12);
+  --c: var(--accent);
+  --c-soft: var(--surface-2);
 
-  --blob-1: #4f46e5;
-  --blob-2: #b45309;
-  --blob-3: #047857;
-  --blob-opacity: 0.16;
+  --green: #8aa390;
+  --green-soft: rgba(138, 163, 144, 0.12);
+  --amber: #c4b08a;
+  --amber-soft: rgba(196, 176, 138, 0.12);
+  --rose: #c49298;
+  --rose-soft: rgba(196, 146, 152, 0.12);
+
+  --blob-1: #1c1c22;
+  --blob-2: #16161b;
+  --blob-3: #22222a;
+  --blob-opacity: 0.5;
 
   --shadow-sm: none;
   --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.35);
@@ -79,13 +73,6 @@
 
   color-scheme: dark;
 }
-
-.c-indigo { --c: var(--indigo); --c-soft: var(--indigo-soft); }
-.c-green { --c: var(--green); --c-soft: var(--green-soft); }
-.c-amber { --c: var(--amber); --c-soft: var(--amber-soft); }
-.c-rose { --c: var(--rose); --c-soft: var(--rose-soft); }
-.c-violet { --c: var(--violet); --c-soft: var(--violet-soft); }
-.c-sky { --c: var(--sky); --c-soft: var(--sky-soft); }
 
 :root {
   --radius: 16px;
@@ -229,8 +216,8 @@ svg.fill {
   width: 32px;
   height: 32px;
   border-radius: 9px;
-  background: linear-gradient(135deg, var(--indigo), var(--violet));
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
   font-family: var(--serif);
   font-size: 17px;
   letter-spacing: 0.02em;
@@ -371,7 +358,7 @@ svg.fill {
 .btn-primary {
   background: var(--accent);
   color: var(--on-accent);
-  box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 28%, transparent);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
@@ -501,7 +488,7 @@ svg.fill {
   font-style: italic;
   font-weight: 400;
   font-size: 1.15em;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .hero-summary {
@@ -563,8 +550,8 @@ svg.fill {
   width: 52px;
   height: 52px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--indigo), var(--violet) 55%, var(--rose));
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
   font-family: var(--serif);
   font-size: 24px;
 }
@@ -614,8 +601,9 @@ svg.fill {
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: var(--c-soft);
-  color: var(--c);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
 }
 
 .now-icon svg {
@@ -633,7 +621,8 @@ svg.fill {
 .snapshot-stats li {
   padding: 12px 14px;
   border-radius: 12px;
-  background: var(--c-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   font-size: 12.5px;
   line-height: 1.35;
   color: var(--muted);
@@ -645,7 +634,7 @@ svg.fill {
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--c);
+  color: var(--text);
 }
 
 /* ── SECTIONS ───────────────────────────────────────────── */
@@ -673,7 +662,7 @@ svg.fill {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--c, var(--accent));
+  color: var(--faint);
 }
 
 .eyebrow::before {
@@ -718,8 +707,7 @@ svg.fill {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--c, var(--accent));
-  opacity: 0.7;
+  background: var(--border-strong);
 }
 
 .tags {
@@ -737,17 +725,6 @@ svg.fill {
   font-weight: 500;
   color: var(--muted);
   line-height: 1.5;
-}
-
-.c-indigo .tags li,
-.c-green .tags li,
-.c-amber .tags li,
-.c-rose .tags li,
-.c-violet .tags li,
-.c-sky .tags li {
-  background: var(--c-soft);
-  border-color: transparent;
-  color: var(--c);
 }
 
 /* ── EXPERIENCE ─────────────────────────────────────────── */
@@ -779,8 +756,9 @@ svg.fill {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: var(--c-soft);
-  color: var(--c);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   font-family: var(--serif);
   font-size: 26px;
 }
@@ -800,7 +778,8 @@ svg.fill {
 }
 
 .role-head .at {
-  color: var(--c);
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .role-date {
@@ -873,7 +852,7 @@ svg.fill {
   margin-bottom: 10px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--c, var(--accent));
+  color: var(--faint);
 }
 
 .project h3 {
@@ -938,8 +917,8 @@ svg.fill {
   margin-top: 26px;
   padding: 10px 16px;
   border-radius: 12px;
-  background: var(--c-soft);
-  color: var(--c);
+  background: var(--text);
+  color: var(--bg);
   font-size: 14px;
   font-weight: 600;
   transition: gap 0.15s;
@@ -971,9 +950,7 @@ svg.fill {
   display: grid;
   place-items: center;
   padding: 32px;
-  background:
-    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--c) 14%, transparent), transparent 55%),
-    var(--c-soft);
+  background: var(--surface-2);
   overflow: hidden;
 }
 
@@ -981,10 +958,10 @@ svg.fill {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(color-mix(in srgb, var(--c) 22%, transparent) 1px, transparent 1px);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
   background-size: 18px 18px;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .project-grid .project-visual {
@@ -1015,8 +992,9 @@ svg.fill {
 .mock-chip {
   padding: 3px 9px;
   border-radius: 999px;
-  background: var(--c-soft);
-  color: var(--c);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   font-size: 11.5px;
   font-weight: 600;
 }
@@ -1069,7 +1047,7 @@ svg.fill {
   margin-top: 14px;
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--c);
+  color: var(--faint);
 }
 
 .mock-score {
@@ -1086,7 +1064,7 @@ svg.fill {
   width: 86px;
   height: 86px;
   border-radius: 50%;
-  background: conic-gradient(var(--c) calc(var(--p) * 1%), var(--c-soft) 0);
+  background: conic-gradient(var(--text) calc(var(--p) * 1%), var(--border) 0);
 }
 
 .ring span {
@@ -1117,7 +1095,7 @@ svg.fill {
   display: block;
   height: 6px;
   border-radius: 6px;
-  background: linear-gradient(90deg, var(--c) var(--w), var(--c-soft) var(--w));
+  background: linear-gradient(90deg, var(--text) var(--w), var(--border) var(--w));
 }
 
 .mock-log {
@@ -1159,37 +1137,31 @@ svg.fill {
 .log-block .log-tag { background: var(--rose-soft); color: var(--rose); }
 
 /* ── SKILLS ─────────────────────────────────────────────── */
-.skills {
+.skill-list {
+  border-top: 1px solid var(--border);
+}
+
+.skill-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-.skill-card {
-  padding: 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-.skill-card h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  font-size: 15px;
+.skill-row dt {
+  font-size: 13px;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
 }
 
-.skill-icon {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--c-soft);
-  color: var(--c);
+.skill-row dd {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--text);
 }
 
 /* ── EDUCATION & ACHIEVEMENTS ───────────────────────────── */
@@ -1231,15 +1203,15 @@ svg.fill {
   flex-direction: column;
   padding: 24px;
   border-radius: var(--radius);
-  background: var(--c-soft);
-  border: 1px solid color-mix(in srgb, var(--c) 14%, transparent);
+  background: var(--surface);
+  border: 1px solid var(--border);
 }
 
 .ach-stat {
   font-family: var(--serif);
   font-size: 44px;
   line-height: 1;
-  color: var(--c);
+  color: var(--text);
 }
 
 .achievements h4 {
@@ -1257,7 +1229,9 @@ svg.fill {
 
 .achievements p a {
   font-weight: 500;
-  color: var(--c);
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .achievements p a:hover {
@@ -1271,11 +1245,7 @@ svg.fill {
   padding: 64px 56px;
   border: 1px solid var(--border);
   border-radius: 28px;
-  background:
-    radial-gradient(600px 300px at 0% 0%, var(--indigo-soft), transparent 70%),
-    radial-gradient(500px 300px at 100% 100%, var(--amber-soft), transparent 70%),
-    radial-gradient(400px 260px at 100% 0%, var(--violet-soft), transparent 70%),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow-md);
 }
 
@@ -1298,7 +1268,7 @@ svg.fill {
   font-size: clamp(20px, 3.6vw, 30px);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--text);
   word-break: break-all;
 }
 
@@ -1373,7 +1343,8 @@ svg.fill {
 .case-stats li {
   padding: 20px;
   border-radius: var(--radius);
-  background: var(--c-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   font-size: 13.5px;
   color: var(--muted);
 }
@@ -1384,7 +1355,7 @@ svg.fill {
   font-family: var(--serif);
   font-size: 40px;
   line-height: 1;
-  color: var(--c);
+  color: var(--text);
 }
 
 .prose {
@@ -1431,8 +1402,9 @@ code {
   height: 32px;
   margin-bottom: 16px;
   border-radius: 10px;
-  background: var(--c-soft);
-  color: var(--c);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
   font-weight: 600;
   font-size: 14px;
 }
@@ -1585,14 +1557,9 @@ code {
   color: var(--muted);
 }
 
-.arch-ai {
-  background: var(--indigo-soft);
-  border-color: color-mix(in srgb, var(--indigo) 25%, transparent);
-}
-
+.arch-ai,
 .arch-core {
-  background: var(--green-soft);
-  border-color: color-mix(in srgb, var(--green) 25%, transparent);
+  background: var(--surface);
 }
 
 .arch-arrow {
@@ -1627,8 +1594,8 @@ code {
   border-radius: 4px;
 }
 
-.dot-ai { background: var(--indigo-soft); border: 1px solid var(--indigo); }
-.dot-core { background: var(--green-soft); border: 1px solid var(--green); margin-left: 14px; }
+.dot-ai { background: var(--surface); border: 1px solid var(--border-strong); }
+.dot-core { background: var(--text); margin-left: 14px; }
 
 .checklist {
   display: grid;
@@ -1654,7 +1621,8 @@ code {
   width: 20px;
   height: 20px;
   border-radius: 6px;
-  background: var(--green-soft);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
 }
 
 .checklist li::after {
@@ -1664,13 +1632,9 @@ code {
   top: 24px;
   width: 8px;
   height: 5px;
-  border-left: 2px solid var(--green);
-  border-bottom: 2px solid var(--green);
+  border-left: 2px solid var(--text);
+  border-bottom: 2px solid var(--text);
   transform: rotate(-45deg);
-}
-
-.checklist.next li::before {
-  background: var(--indigo-soft);
 }
 
 .checklist.next li::after {
@@ -1680,7 +1644,7 @@ code {
   height: 6px;
   border: 0;
   border-radius: 50%;
-  background: var(--indigo);
+  background: var(--text);
   transform: none;
 }
 
@@ -1734,8 +1698,9 @@ code {
     grid-template-columns: 1fr;
   }
 
-  .skills {
-    grid-template-columns: repeat(2, 1fr);
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .achievements {
@@ -1813,7 +1778,6 @@ code {
   }
 
   .project-grid,
-  .skills,
   .achievements {
     grid-template-columns: 1fr;
   }
