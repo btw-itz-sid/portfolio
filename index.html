@@ -8,20 +8,28 @@
   <meta name="description"
     content="Siddharth Kumar Bhagat — final-year B.Tech CSE student and full-stack engineer building with React, TypeScript, Node.js, PostgreSQL and LLMs.">
   <meta name="author" content="Siddharth Kumar Bhagat">
-  <meta name="theme-color" content="#0a0a0b">
+  <meta name="theme-color" content="#fbfaf7">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Siddharth Kumar Bhagat · Full-Stack Engineer">
   <meta property="og:description"
     content="Full-stack products end to end: React and TypeScript on the front, Node.js and PostgreSQL on the back, with LLM features where they solve a real problem.">
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%238ab4ff'%3ESB%3C/text%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
 </head>
 
 <body>
@@ -29,86 +37,134 @@
 
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#top" class="nav-logo" aria-label="Home">Siddharth<span>.</span></a>
-      <nav aria-label="Primary">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
-        </ul>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span>
-      </button>
+      <a href="#top" class="nav-logo" aria-label="Home">
+        <span class="logo-mark">S</span>
+        Siddharth
+      </a>
+      <div class="nav-right">
+        <nav aria-label="Primary">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="nav-resume" target="_blank" rel="noopener">Resume</a></li>
+          </ul>
+        </nav>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- HERO -->
     <section class="hero" id="top">
-      <div class="container">
-        <p class="status"><span class="status-dot"></span>Open to full-time SDE roles · Graduating June 2027</p>
-        <h1 class="hero-name">Siddharth Kumar Bhagat</h1>
-        <p class="hero-role">Full-stack engineer building products end to end.</p>
-        <p class="hero-summary">
-          Final-year B.Tech CSE student. I work with React and TypeScript on the front, Node.js and PostgreSQL on
-          the back, and add LLM features where they solve a real problem. Currently interning at
-          <strong>Repeat AI</strong> on a B2B procurement app for restaurants, and building
-          <strong>KhataGST</strong>, a GST compliance SaaS for Indian MSMEs.
-        </p>
-        <div class="hero-actions">
-          <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-            Download resume
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" /></svg>
-          </a>
-          <a href="mailto:siddharthraj600@gmail.com" class="btn btn-ghost">siddharthraj600@gmail.com</a>
+      <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container hero-grid">
+        <div>
+          <p class="status"><span class="status-dot"></span>Open to full-time SDE roles · Graduating June 2027</p>
+          <h1 class="hero-name">Siddharth Kumar Bhagat</h1>
+          <p class="hero-role">Full-stack engineer who ships products <em>end to end.</em></p>
+          <p class="hero-summary">
+            Final-year B.Tech CSE student. React and TypeScript on the front, Node.js and PostgreSQL on the back,
+            and LLM features only where they solve a real problem. Currently interning at
+            <strong>Repeat AI</strong> and building <strong>KhataGST</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+              Download resume
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0l-5-5m5 5l5-5M5 20h14" /></svg>
+            </a>
+            <a href="#projects" class="btn btn-ghost">See selected work</a>
+          </div>
+          <ul class="social" aria-label="Profiles">
+            <li>
+              <a href="https://github.com/btw-itz-sid" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                  <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
+                </svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                  <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
+                </svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
+                  <path d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.22l-2.6 2.78a5.3 5.3 0 0 0-1.27 2.07 5.6 5.6 0 0 0-.2 2.3 5.3 5.3 0 0 0 1.49 3.13l4.36 4.36a5.4 5.4 0 0 0 7.65.03l2.6-2.6a1.37 1.37 0 1 0-1.94-1.94l-2.6 2.6a2.68 2.68 0 0 1-3.78-.02l-4.36-4.36a2.6 2.6 0 0 1-.03-3.67l2.6-2.79 5.4-5.78A1.37 1.37 0 0 0 13.48 0Zm-2.87 13.38a1.37 1.37 0 1 0 0 2.74h9.68a1.37 1.37 0 1 0 0-2.74h-9.68Z" />
+                </svg>
+                LeetCode
+              </a>
+            </li>
+          </ul>
         </div>
-        <ul class="social" aria-label="Profiles">
-          <li>
-            <a href="https://github.com/btw-itz-sid" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
-                <path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" />
-              </svg>
-              <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
-                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" />
-              </svg>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener" aria-label="LeetCode">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill">
-                <path d="M13.48 0a1.37 1.37 0 0 0-.96.44L7.12 6.22l-2.6 2.78a5.3 5.3 0 0 0-1.27 2.07 5.6 5.6 0 0 0-.2 2.3 5.3 5.3 0 0 0 1.49 3.13l4.36 4.36a5.4 5.4 0 0 0 7.65.03l2.6-2.6a1.37 1.37 0 1 0-1.94-1.94l-2.6 2.6a2.68 2.68 0 0 1-3.78-.02l-4.36-4.36a2.6 2.6 0 0 1-.03-3.67l2.6-2.79 5.4-5.78A1.37 1.37 0 0 0 13.48 0Zm-2.87 13.38a1.37 1.37 0 1 0 0 2.74h9.68a1.37 1.37 0 1 0 0-2.74h-9.68Z" />
-              </svg>
-              <span>LeetCode</span>
-            </a>
-          </li>
-          <li class="social-meta">Greater Noida, India</li>
-        </ul>
+
+        <aside class="snapshot reveal" aria-label="Currently">
+          <div class="snapshot-head">
+            <div class="avatar" aria-hidden="true">S</div>
+            <div>
+              <p class="snapshot-name">Siddharth Kumar Bhagat</p>
+              <p class="snapshot-loc">Greater Noida, India</p>
+            </div>
+          </div>
+          <p class="snapshot-label">Right now</p>
+          <ul class="now-list">
+            <li>
+              <span class="now-icon c-indigo" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7" /></svg>
+              </span>
+              <div><strong>Intern, Repeat AI</strong>Buyer &amp; vendor apps, WhatsApp ordering bot</div>
+            </li>
+            <li>
+              <span class="now-icon c-green" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 8h10M7 12h6" /></svg>
+              </span>
+              <div><strong>Building KhataGST</strong>GST filing SaaS for Indian MSMEs</div>
+            </li>
+          </ul>
+          <ul class="snapshot-stats">
+            <li class="c-indigo"><span>70+</span>commits at Repeat AI</li>
+            <li class="c-green"><span>150+</span>LeetCode in Java</li>
+            <li class="c-amber"><span>SIH</span>2025 qualifier</li>
+            <li class="c-violet"><span>2027</span>B.Tech CSE</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section class="section" id="experience">
       <div class="container">
-        <h2 class="section-title"><span>01</span>Experience</h2>
+        <div class="section-head">
+          <p class="eyebrow c-indigo">Experience</p>
+          <h2 class="section-title">Where I’ve been shipping.</h2>
+        </div>
 
         <ol class="timeline">
-          <li class="role reveal">
-            <div class="role-meta">
-              <span class="role-date">Jul 2026 — Present</span>
-            </div>
+          <li class="role reveal c-indigo">
+            <div class="company-badge" aria-hidden="true">R</div>
             <div class="role-body">
-              <h3>Intern <span class="at">@ Repeat AI</span></h3>
+              <div class="role-head">
+                <h3>Intern <span class="at">@ Repeat AI</span></h3>
+                <span class="role-date">Jul 2026 — Present</span>
+              </div>
               <p class="role-sub">B2B procurement app for restaurants and cloud kitchens</p>
               <ul class="bullets">
                 <li>Main contributor to the buyer and vendor apps (React Native, TypeScript, Node.js) with
@@ -130,26 +186,27 @@
             </div>
           </li>
 
-          <li class="role reveal">
-            <div class="role-meta">
-              <span class="role-date">Jul — Sep 2025</span>
-            </div>
+          <li class="role role-compact reveal c-sky">
+            <div class="company-badge" aria-hidden="true">G</div>
             <div class="role-body">
-              <h3>Student Intern <span class="at">@ EduSkills Foundation</span></h3>
+              <div class="role-head">
+                <h3>Student Intern <span class="at">@ EduSkills Foundation</span></h3>
+                <span class="role-date">Jul — Sep 2025</span>
+              </div>
               <p class="role-sub">Google for Developers · Remote</p>
               <ul class="bullets">
-                <li>Completed the Google AI/ML curriculum and built projects on Google Cloud AI services through REST
-                  APIs.</li>
+                <li>Completed the Google AI/ML curriculum and built projects on Google Cloud AI services through REST APIs.</li>
               </ul>
             </div>
           </li>
 
-          <li class="role reveal">
-            <div class="role-meta">
-              <span class="role-date">Jul — Aug 2025</span>
-            </div>
+          <li class="role role-compact reveal c-amber">
+            <div class="company-badge" aria-hidden="true">C</div>
             <div class="role-body">
-              <h3>Student Intern <span class="at">@ CSRBOX</span></h3>
+              <div class="role-head">
+                <h3>Student Intern <span class="at">@ CSRBOX</span></h3>
+                <span class="role-date">Jul — Aug 2025</span>
+              </div>
               <p class="role-sub">Remote</p>
               <ul class="bullets">
                 <li>Worked on AI-driven research tasks for NGO projects.</li>
@@ -160,84 +217,128 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
+    <section class="section section-alt" id="projects">
       <div class="container">
-        <h2 class="section-title"><span>02</span>Projects</h2>
+        <div class="section-head">
+          <p class="eyebrow c-green">Selected work</p>
+          <h2 class="section-title">Things I’ve built.</h2>
+          <p class="section-lead">Three products, each with a real constraint: tax math that must reconcile, interviews
+            that need a rubric, prompts that must not jailbreak the model.</p>
+        </div>
 
-        <article class="project project-featured reveal">
-          <header class="project-head">
-            <div>
-              <p class="project-kicker">Mar 2026 — Present · In active development</p>
-              <h3>KhataGST</h3>
-              <p class="project-tagline">GST filing and ITC reconciliation for Indian MSMEs</p>
+        <article class="project project-featured reveal c-green">
+          <div class="project-visual" aria-hidden="true">
+            <div class="mock-card">
+              <div class="mock-head">
+                <span class="mock-chip">Scanned · 95%</span>
+                <span class="mock-muted">ST/2026/0142</span>
+              </div>
+              <p class="mock-title">Sharma Traders</p>
+              <p class="mock-sub">GSTIN 09AAPFU0939F1ZV · 14 Mar 2026</p>
+              <dl class="mock-rows">
+                <div><dt>Taxable</dt><dd>₹8,000.00</dd></div>
+                <div><dt>CGST 2.5%</dt><dd>₹200.00</dd></div>
+                <div><dt>SGST 2.5%</dt><dd>₹200.00</dd></div>
+                <div class="mock-total"><dt>Total</dt><dd>₹8,400.00</dd></div>
+              </dl>
+              <p class="mock-foot">stored as 840000 paise</p>
             </div>
-            <a class="project-link" href="https://github.com/btw-itz-sid/KhataGST" target="_blank" rel="noopener">
-              GitHub
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+          </div>
+          <div class="project-body">
+            <header class="project-head">
+              <div>
+                <p class="project-kicker">Mar 2026 — Present · In development</p>
+                <h3>KhataGST</h3>
+                <p class="project-tagline">GST filing and ITC reconciliation for Indian MSMEs</p>
+              </div>
+              <a class="project-link" href="https://github.com/btw-itz-sid/KhataGST" target="_blank" rel="noopener">
+                GitHub
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+              </a>
+            </header>
+            <ul class="bullets">
+              <li>Gemini Vision turns photos of invoices into structured records (GSTIN, tax split, vendor details),
+                validated on both client and server.</li>
+              <li>GSTR-1 and GSTR-3B are computed in plain deterministic code using <strong>integer paise instead of
+                  floats</strong>, with Excel/CSV export.</li>
+              <li>AI CA assistant grounded in GST law (CGST Act Sections 16, 17(5) and 50; Rules 88A and 86B) that
+                returns the exact sections behind every answer.</li>
+              <li>Confidence-routed extraction with a fallback chain across Gemini models, so a failed scan becomes a
+                review form, never an error.</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Gemini API</li><li>AWS S3</li>
+            </ul>
+            <a class="case-link" href="projects/khatagst/">
+              Read the case study
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" /></svg>
             </a>
-          </header>
-          <ul class="bullets">
-            <li>Gemini Vision turns photos of invoices into structured records (GSTIN, tax split, vendor details),
-              validated on both client and server.</li>
-            <li>GSTR-1 and GSTR-3B are computed in plain deterministic code using <strong>integer paise instead of
-                floats</strong>, with Excel/CSV export.</li>
-            <li>AI CA assistant grounded in GST law (CGST Act Sections 16, 17(5) and 50; Rules 88A and 86B) that returns
-              the exact sections behind every answer.</li>
-            <li>Confidence-routed extraction with a fallback chain across Gemini models, so a failed scan becomes a
-              review form, never an error.</li>
-          </ul>
-          <ul class="tags">
-            <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Gemini API</li><li>AWS S3</li><li>Railway</li>
-          </ul>
-          <a class="case-link" href="projects/khatagst/">
-            Read the case study
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6l6 6-6 6" /></svg>
-          </a>
+          </div>
         </article>
 
         <div class="project-grid">
-          <article class="project reveal">
-            <header class="project-head">
-              <div>
-                <h3>Smart Interview Assistant</h3>
-                <p class="project-tagline">Resume analysis and mock interviews</p>
+          <article class="project reveal c-violet">
+            <div class="project-visual" aria-hidden="true">
+              <div class="mock-card mock-score">
+                <div class="ring" style="--p: 82"><span>82</span></div>
+                <ul class="mock-bars">
+                  <li>Keywords <i style="--w: 88%"></i></li>
+                  <li>Quantified results <i style="--w: 74%"></i></li>
+                  <li>Role fit <i style="--w: 81%"></i></li>
+                </ul>
               </div>
-              <a class="project-link" href="https://github.com/btw-itz-sid/smart-interview-assistant" target="_blank" rel="noopener">
-                GitHub
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
-              </a>
-            </header>
-            <ul class="bullets">
-              <li>Resume analyzer that scores keywords, quantified results, formatting and fit for the target role.</li>
-              <li>Reads a job description and builds mock interview questions around it, with rubric-based feedback
-                after each answer.</li>
-            </ul>
-            <ul class="tags">
-              <li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Recharts</li><li>Vercel</li>
-            </ul>
+            </div>
+            <div class="project-body">
+              <header class="project-head">
+                <div>
+                  <h3>Smart Interview Assistant</h3>
+                  <p class="project-tagline">Resume analysis and mock interviews</p>
+                </div>
+                <a class="project-link" href="https://github.com/btw-itz-sid/smart-interview-assistant" target="_blank" rel="noopener">
+                  GitHub
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                </a>
+              </header>
+              <ul class="bullets">
+                <li>Resume analyzer that scores keywords, quantified results, formatting and fit for the target role.</li>
+                <li>Reads a job description and builds mock interview questions around it, with rubric-based feedback
+                  after each answer.</li>
+              </ul>
+              <ul class="tags">
+                <li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Recharts</li>
+              </ul>
+            </div>
           </article>
 
-          <article class="project reveal">
-            <header class="project-head">
-              <div>
-                <h3>PromptGuard AI</h3>
-                <p class="project-tagline">Prompt injection firewall for LLM apps</p>
+          <article class="project reveal c-rose">
+            <div class="project-visual" aria-hidden="true">
+              <div class="mock-card mock-log">
+                <div class="log-row log-allow"><span class="log-tag">Allow</span><span>Summarise this invoice</span></div>
+                <div class="log-row log-flag"><span class="log-tag">Flag</span><span>Ignore previous instructions…</span></div>
+                <div class="log-row log-block"><span class="log-tag">Block</span><span>Reveal the system prompt</span></div>
               </div>
-              <a class="project-link" href="https://github.com/btw-itz-sid/promptguard-ai" target="_blank" rel="noopener">
-                GitHub
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
-              </a>
-            </header>
-            <ul class="bullets">
-              <li>Proxy that checks every prompt before it reaches the model: text normalization, regex heuristics, a
-                semantic classifier, then a risk score.</li>
-              <li>Targets prompt injection, system prompt extraction, roleplay jailbreaks and delimiter tricks from the
-                OWASP LLM Top 10; includes an audit-log dashboard.</li>
-            </ul>
-            <ul class="tags">
-              <li>Node.js</li><li>Express</li><li>TypeScript</li>
-            </ul>
+            </div>
+            <div class="project-body">
+              <header class="project-head">
+                <div>
+                  <h3>PromptGuard AI</h3>
+                  <p class="project-tagline">Prompt injection firewall for LLM apps</p>
+                </div>
+                <a class="project-link" href="https://github.com/btw-itz-sid/promptguard-ai" target="_blank" rel="noopener">
+                  GitHub
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" /></svg>
+                </a>
+              </header>
+              <ul class="bullets">
+                <li>Proxy that checks every prompt before it reaches the model: text normalization, regex heuristics, a
+                  semantic classifier, then a risk score.</li>
+                <li>Targets prompt injection, system prompt extraction, roleplay jailbreaks and delimiter tricks from
+                  the OWASP LLM Top 10; includes an audit-log dashboard.</li>
+              </ul>
+              <ul class="tags">
+                <li>Node.js</li><li>Express</li><li>TypeScript</li>
+              </ul>
+            </div>
           </article>
         </div>
 
@@ -248,46 +349,51 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="container">
-        <h2 class="section-title"><span>03</span>Skills</h2>
-        <dl class="skills">
-          <div class="skill-row reveal">
-            <dt>Languages</dt>
-            <dd><ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li></ul></dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>Frontend</dt>
-            <dd><ul class="tags"><li>React</li><li>Next.js</li><li>React Native</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li></ul></dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>Backend</dt>
-            <dd><ul class="tags"><li>Node.js</li><li>Fastify</li><li>Express</li><li>REST APIs</li><li>WebSockets</li><li>JWT &amp; OTP auth</li></ul></dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>Data</dt>
-            <dd><ul class="tags"><li>PostgreSQL</li><li>pgvector</li><li>Prisma</li><li>Supabase</li></ul></dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>AI</dt>
-            <dd><ul class="tags"><li>Gemini &amp; OpenAI APIs</li><li>RAG</li><li>Structured extraction</li><li>Prompt design</li><li>Ollama</li><li>LangChain</li></ul></dd>
-          </div>
-          <div class="skill-row reveal">
-            <dt>Tools</dt>
-            <dd><ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Docker</li><li>Railway</li><li>Vercel</li><li>AWS S3</li></ul></dd>
-          </div>
-        </dl>
+        <div class="section-head">
+          <p class="eyebrow c-violet">Skills</p>
+          <h2 class="section-title">What I work with.</h2>
+        </div>
+        <div class="skills">
+          <article class="skill-card reveal c-indigo">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 17l-5-5 5-5M16 7l5 5-5 5" /></svg></span>Languages</h3>
+            <ul class="tags"><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li></ul>
+          </article>
+          <article class="skill-card reveal c-sky">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M8 21h8" /></svg></span>Frontend</h3>
+            <ul class="tags"><li>React</li><li>Next.js</li><li>React Native</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li></ul>
+          </article>
+          <article class="skill-card reveal c-green">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16M4 14h16M10 4v16" /></svg></span>Backend</h3>
+            <ul class="tags"><li>Node.js</li><li>Fastify</li><li>Express</li><li>REST APIs</li><li>WebSockets</li><li>JWT &amp; OTP</li></ul>
+          </article>
+          <article class="skill-card reveal c-amber">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3" /><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" /></svg></span>Data</h3>
+            <ul class="tags"><li>PostgreSQL</li><li>pgvector</li><li>Prisma</li><li>Supabase</li></ul>
+          </article>
+          <article class="skill-card reveal c-violet">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.6H21l-5.4 4 2.1 6.4L12 16.6 6.3 20l2.1-6.4L3 9.6h6.8z" /></svg></span>AI</h3>
+            <ul class="tags"><li>Gemini &amp; OpenAI</li><li>RAG</li><li>Structured extraction</li><li>Ollama</li><li>LangChain</li></ul>
+          </article>
+          <article class="skill-card reveal c-rose">
+            <h3><span class="skill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.1-3.1a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z" /></svg></span>Tools</h3>
+            <ul class="tags"><li>Git</li><li>GitHub Actions</li><li>Docker</li><li>Railway</li><li>Vercel</li><li>AWS S3</li></ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- EDUCATION & ACHIEVEMENTS -->
-    <section class="section" id="education">
+    <section class="section section-alt" id="education">
       <div class="container">
-        <h2 class="section-title"><span>04</span>Education &amp; Achievements</h2>
+        <div class="section-head">
+          <p class="eyebrow c-amber">About</p>
+          <h2 class="section-title">Education &amp; a few marks on the way.</h2>
+        </div>
 
-        <div class="edu reveal">
-          <div>
+        <div class="edu reveal c-indigo">
+          <div class="company-badge" aria-hidden="true">G</div>
+          <div class="edu-text">
             <h3>Galgotias University, Greater Noida</h3>
             <p>B.Tech, Computer Science &amp; Engineering</p>
           </div>
@@ -295,50 +401,44 @@
         </div>
 
         <ul class="achievements">
-          <li class="reveal">
+          <li class="reveal c-green">
             <span class="ach-stat">87%</span>
-            <div>
-              <h4>Smart India Hackathon 2025 — Qualifier</h4>
-              <p>Cattle breed recognition with a CNN.</p>
-            </div>
+            <h4>Smart India Hackathon 2025</h4>
+            <p>Qualifier. Cattle breed recognition with a CNN.</p>
           </li>
-          <li class="reveal">
+          <li class="reveal c-amber">
             <span class="ach-stat">R2</span>
-            <div>
-              <h4>HackWithInfy 2025</h4>
-              <p>Qualified for Round 2.</p>
-            </div>
+            <h4>HackWithInfy 2025</h4>
+            <p>Qualified for Round 2.</p>
           </li>
-          <li class="reveal">
+          <li class="reveal c-indigo">
             <span class="ach-stat">150+</span>
-            <div>
-              <h4>LeetCode problems solved in Java</h4>
-              <p>DP, graphs, trees, sliding window.
-                <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener">View profile</a></p>
-            </div>
+            <h4>LeetCode in Java</h4>
+            <p>DP, graphs, trees, sliding window.
+              <a href="https://leetcode.com/u/btw_itzz_sid_/" target="_blank" rel="noopener">Profile</a></p>
           </li>
-          <li class="reveal">
+          <li class="reveal c-sky">
             <span class="ach-stat">GDG</span>
-            <div>
-              <h4>Google AI/ML Virtual Internship</h4>
-              <p>Google Developer Groups, Aug 2025.</p>
-            </div>
+            <h4>Google AI/ML Internship</h4>
+            <p>Google Developer Groups, Aug 2025.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
+    <section class="section" id="contact">
       <div class="container">
-        <h2 class="section-title"><span>05</span>Contact</h2>
-        <p class="contact-lead">I'm looking for full-time software engineering roles starting 2027. If you're hiring or
-          want to talk about something I've built, email is the fastest way to reach me.</p>
-        <a class="contact-email" href="mailto:siddharthraj600@gmail.com">siddharthraj600@gmail.com</a>
-        <div class="hero-actions">
-          <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">View resume</a>
-          <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/btw-itz-sid" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        <div class="contact-card">
+          <p class="eyebrow c-indigo">Contact</p>
+          <h2 class="section-title">Let’s work together.</h2>
+          <p class="contact-lead">I'm looking for full-time software engineering roles starting 2027. If you're hiring
+            or want to talk about something I've built, email is the fastest way to reach me.</p>
+          <a class="contact-email" href="mailto:siddharthraj600@gmail.com">siddharthraj600@gmail.com</a>
+          <div class="hero-actions">
+            <a href="Siddharth_Kumar_Bhagat_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">View resume</a>
+            <a href="https://www.linkedin.com/in/siddharth-kumar-bhagat" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/btw-itz-sid" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+          </div>
         </div>
       </div>
     </section>

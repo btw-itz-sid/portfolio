@@ -8,20 +8,28 @@
   <meta name="description"
     content="How KhataGST turns photos of GST bills into filing-ready GSTR-1 and GSTR-3B returns: integer-paise tax math, confidence-routed AI extraction and statute-grounded answers.">
   <meta name="author" content="Siddharth Kumar Bhagat">
-  <meta name="theme-color" content="#0a0a0b">
+  <meta name="theme-color" content="#fbfaf7">
   <meta property="og:type" content="article">
   <meta property="og:title" content="KhataGST case study · Siddharth Kumar Bhagat">
   <meta property="og:description"
     content="From a photo of a bill to a filing-ready GST return, without letting an AI model decide a tax number.">
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0b'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%238ab4ff'%3ESB%3C/text%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.setAttribute("data-theme", "dark");
+    })();
+  </script>
 </head>
 
 <body>
@@ -29,11 +37,25 @@
 
   <header class="nav scrolled" id="nav">
     <div class="nav-inner">
-      <a href="../../" class="nav-logo" aria-label="Home">Siddharth<span>.</span></a>
-      <a href="../../#projects" class="nav-back">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6l-6 6 6 6" /></svg>
-        All projects
+      <a href="../../" class="nav-logo" aria-label="Home">
+        <span class="logo-mark">S</span>
+        Siddharth
       </a>
+      <div class="nav-right">
+        <a href="../../#projects" class="nav-back">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6l-6 6 6 6" /></svg>
+          All projects
+        </a>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -41,7 +63,7 @@
 
     <section class="case-hero">
       <div class="container">
-        <p class="project-kicker">Case study · Mar 2026 — Present</p>
+        <p class="project-kicker c-green">Case study · Mar 2026 — Present</p>
         <h1 class="hero-name">KhataGST</h1>
         <p class="hero-role">GST filing and input tax credit reconciliation for Indian small businesses.</p>
         <p class="hero-summary">
@@ -75,17 +97,18 @@
         </dl>
 
         <ul class="case-stats">
-          <li><span>11</span>API modules</li>
-          <li><span>11</span>app screens</li>
-          <li><span>5</span>SQL migrations</li>
-          <li><span>3</span>Gemini models in fallback</li>
+          <li class="c-green"><span>11</span>API modules</li>
+          <li class="c-indigo"><span>11</span>app screens</li>
+          <li class="c-amber"><span>6</span>SQL migrations</li>
+          <li class="c-violet"><span>3</span>Gemini models in fallback</li>
         </ul>
       </div>
     </section>
 
     <section class="section">
       <div class="container prose">
-        <h2 class="section-title"><span>01</span>The problem</h2>
+        <p class="eyebrow c-green">01 · Problem</p>
+        <h2 class="section-title">The problem</h2>
         <p>
           A registered business in India files GSTR-1 (its sales) by the 11th and GSTR-3B (a summary plus the tax
           payment) by the 20th, every month. For most small traders the input is paper: supplier bills in a drawer and
@@ -101,7 +124,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title"><span>02</span>Architecture</h2>
+        <p class="eyebrow c-indigo">02 · Architecture</p>
+        <h2 class="section-title">Architecture</h2>
 
         <div class="arch" role="img"
           aria-label="Architecture: a React single-page app calls a Fastify API, which routes to three modules (bill scanner, GST engine, AI CA assistant) backed by PostgreSQL, object storage and the Gemini API.">
@@ -169,9 +193,11 @@
 
     <section class="section">
       <div class="container prose">
-        <h2 class="section-title"><span>03</span>Key decisions</h2>
+        <p class="eyebrow c-amber">03 · Decisions</p>
+        <h2 class="section-title">Key decisions</h2>
 
         <article class="decision">
+          <span class="decision-num c-green">1</span>
           <h3>Money is an integer, always</h3>
           <p>
             Every amount is stored and computed in paise, so ₹100.50 is <code>10050</code>. With floating point,
@@ -197,6 +223,7 @@
         </article>
 
         <article class="decision">
+          <span class="decision-num c-indigo">2</span>
           <h3>The model reads, code computes</h3>
           <p>
             Gemini only extracts fields from the bill image into a fixed schema: GSTIN, invoice number, date, taxable
@@ -213,6 +240,7 @@
         </article>
 
         <article class="decision">
+          <span class="decision-num c-amber">3</span>
           <h3>Confidence decides how much the user has to check</h3>
           <p>
             Every extraction carries a confidence score, and that score decides the next step:
@@ -231,6 +259,7 @@
         </article>
 
         <article class="decision">
+          <span class="decision-num c-violet">4</span>
           <h3>Answers cite the law, or fall back to it</h3>
           <p>
             The AI CA assistant first retrieves the relevant statutory sections: Section 16 (conditions for input tax
@@ -253,7 +282,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title"><span>04</span>Security &amp; reliability</h2>
+        <p class="eyebrow c-rose">04 · Hardening</p>
+        <h2 class="section-title">Security &amp; reliability</h2>
         <ul class="checklist">
           <li><strong>Phone OTP login</strong> with a 60-second resend cooldown per number and a 5-attempt limit before a
             new OTP is required. Sessions use JWT.</li>
@@ -271,7 +301,8 @@
 
     <section class="section">
       <div class="container">
-        <h2 class="section-title"><span>05</span>What's next</h2>
+        <p class="eyebrow c-sky">05 · Next</p>
+        <h2 class="section-title">What's next</h2>
         <ul class="checklist next">
           <li><strong>Semantic retrieval.</strong> Embed the statute sections with Gemini and switch the assistant to
             pgvector cosine search.</li>
@@ -300,7 +331,7 @@
     </div>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="../../script.js"></script>
 </body>
 
 </html>
