@@ -875,6 +875,14 @@ svg.fill {
   color: var(--faint);
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
