@@ -8,13 +8,13 @@
   <meta name="description"
     content="Siddharth Kumar Bhagat — final-year B.Tech CSE student and full-stack engineer building with React, TypeScript, Node.js, PostgreSQL and LLMs.">
   <meta name="author" content="Siddharth Kumar Bhagat">
-  <meta name="theme-color" content="#fbfaf7">
+  <meta name="theme-color" content="#0a1220">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Siddharth Kumar Bhagat · Full-Stack Engineer">
   <meta property="og:description"
     content="Full-stack products end to end: React and TypeScript on the front, Node.js and PostgreSQL on the back, with LLM features where they solve a real problem.">
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171717'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1220'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23c9b59a'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,7 +25,7 @@
     document.documentElement.classList.add("js");
     (function () {
       var t = localStorage.getItem("theme");
-      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
     })();
   </script>
 </head>
@@ -226,28 +226,24 @@
 
         <article class="project project-featured reveal">
           <div class="project-visual" aria-hidden="true">
-            <div class="mock-card">
-              <div class="mock-head">
-                <span class="mock-chip">Scanned · 95%</span>
-                <span class="mock-muted">ST/2026/0142</span>
+            <div class="visual-panel">
+              <div class="visual-mark">₹</div>
+              <p class="visual-kicker">Live · khata-gst.vercel.app</p>
+              <p class="visual-title">Bill photo → filing pack</p>
+              <p class="visual-line">scan · integer paise · GSTR-1 / 3B</p>
+              <div class="visual-meta">
+                <span>React</span>
+                <span>Fastify</span>
+                <span>Neon</span>
               </div>
-              <p class="mock-title">Sharma Traders</p>
-              <p class="mock-sub">GSTIN 09AAPFU0939F1ZV · 14 Mar 2026</p>
-              <dl class="mock-rows">
-                <div><dt>Taxable</dt><dd>₹8,000.00</dd></div>
-                <div><dt>CGST 2.5%</dt><dd>₹200.00</dd></div>
-                <div><dt>SGST 2.5%</dt><dd>₹200.00</dd></div>
-                <div class="mock-total"><dt>Total</dt><dd>₹8,400.00</dd></div>
-              </dl>
-              <p class="mock-foot">stored as 840000 paise</p>
             </div>
           </div>
           <div class="project-body">
             <header class="project-head">
               <div>
-                <p class="project-kicker">Mar 2026 — Present · Live demo</p>
+                <p class="project-kicker">Mar 2026 — Present · Live</p>
                 <h3>KhataGST</h3>
-                <p class="project-tagline">GST filing and ITC reconciliation for Indian MSMEs</p>
+                <p class="project-tagline">GST books, ITC checks, and return prep for Indian MSMEs</p>
               </div>
               <div class="project-links">
                 <a class="project-link" href="https://khata-gst.vercel.app" target="_blank" rel="noopener">
@@ -261,17 +257,13 @@
               </div>
             </header>
             <ul class="bullets">
-              <li>Gemini Vision turns photos of invoices into structured records (GSTIN, tax split, vendor details),
-                validated on both client and server.</li>
-              <li>GSTR-1 and GSTR-3B are computed in plain deterministic code using <strong>integer paise instead of
-                  floats</strong>, with Excel/CSV export.</li>
-              <li>AI CA assistant grounded in GST law (CGST Act Sections 16, 17(5) and 50; Rules 88A and 86B) that
-                returns the exact sections behind every answer.</li>
-              <li>Confidence-routed extraction with a fallback chain across Gemini models, so a failed scan becomes a
-                review form, never an error.</li>
+              <li>Upload a bill photo — Gemini extracts GSTIN, line items, and tax split; client + server both validate before save.</li>
+              <li>GSTR-1 / GSTR-3B math runs in plain TypeScript on <strong>integer paise</strong> (no float drift), then Excel export.</li>
+              <li>AI CA answers cite CGST sections (16, 17(5), 50) and Rules 88A / 86B instead of guessing.</li>
+              <li>Low-confidence scans open a review form — never invent an invoice.</li>
             </ul>
             <ul class="tags">
-              <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Gemini API</li><li>AWS S3</li>
+              <li>React</li><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>Gemini API</li><li>Render / Vercel</li>
             </ul>
             <a class="case-link" href="projects/khatagst/">
               Read the case study
@@ -283,13 +275,15 @@
         <div class="project-grid">
           <article class="project reveal">
             <div class="project-visual" aria-hidden="true">
-              <div class="mock-card mock-score">
-                <div class="ring" style="--p: 82"><span>82</span></div>
-                <ul class="mock-bars">
-                  <li>Keywords <i style="--w: 88%"></i></li>
-                  <li>Quantified results <i style="--w: 74%"></i></li>
-                  <li>Role fit <i style="--w: 81%"></i></li>
-                </ul>
+              <div class="visual-panel">
+                <div class="visual-mark">?</div>
+                <p class="visual-kicker">Practice loop</p>
+                <p class="visual-title">Resume → questions</p>
+                <p class="visual-line">score · JD fit · rubric feedback</p>
+                <div class="visual-meta">
+                  <span>Next.js</span>
+                  <span>Express</span>
+                </div>
               </div>
             </div>
             <div class="project-body">
@@ -304,9 +298,8 @@
                 </a>
               </header>
               <ul class="bullets">
-                <li>Resume analyzer that scores keywords, quantified results, formatting and fit for the target role.</li>
-                <li>Reads a job description and builds mock interview questions around it, with rubric-based feedback
-                  after each answer.</li>
+                <li>Scores a resume on keywords, quantified results, formatting, and role fit.</li>
+                <li>Builds mock questions from a job description and grades answers against a simple rubric.</li>
               </ul>
               <ul class="tags">
                 <li>Next.js</li><li>TypeScript</li><li>Node.js</li><li>Express</li><li>Recharts</li>
@@ -316,10 +309,15 @@
 
           <article class="project reveal">
             <div class="project-visual" aria-hidden="true">
-              <div class="mock-card mock-log">
-                <div class="log-row log-allow"><span class="log-tag">Allow</span><span>Summarise this invoice</span></div>
-                <div class="log-row log-flag"><span class="log-tag">Flag</span><span>Ignore previous instructions…</span></div>
-                <div class="log-row log-block"><span class="log-tag">Block</span><span>Reveal the system prompt</span></div>
+              <div class="visual-panel">
+                <div class="visual-mark">∅</div>
+                <p class="visual-kicker">LLM firewall</p>
+                <p class="visual-title">Allow · flag · block</p>
+                <p class="visual-line">normalize → heuristics → risk score</p>
+                <div class="visual-meta">
+                  <span>Node.js</span>
+                  <span>OWASP LLM</span>
+                </div>
               </div>
             </div>
             <div class="project-body">
@@ -334,10 +332,8 @@
                 </a>
               </header>
               <ul class="bullets">
-                <li>Proxy that checks every prompt before it reaches the model: text normalization, regex heuristics, a
-                  semantic classifier, then a risk score.</li>
-                <li>Targets prompt injection, system prompt extraction, roleplay jailbreaks and delimiter tricks from
-                  the OWASP LLM Top 10; includes an audit-log dashboard.</li>
+                <li>Proxy in front of the model: normalize text, run regex heuristics, score risk, then allow / flag / block.</li>
+                <li>Covers injection, system-prompt leaks, and jailbreak patterns from the OWASP LLM Top 10, with an audit log.</li>
               </ul>
               <ul class="tags">
                 <li>Node.js</li><li>Express</li><li>TypeScript</li>

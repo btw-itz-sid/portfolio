@@ -32,7 +32,7 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#0e0e11" : "#fbfaf7");
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#0a1220" : "#eef2f7");
   if (themeToggle) {
     themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
   }
