@@ -428,19 +428,61 @@ svg.fill {
   align-items: center;
 }
 
-.status {
+.avail-card {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 14px 6px 10px;
+  gap: 14px;
+  max-width: 100%;
   margin-bottom: 28px;
+  padding: 10px 14px 10px 12px;
   border: 1px solid var(--border);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border-radius: 14px;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
-  font-size: 13px;
+}
+
+.avail-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.avail-live-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.avail-divider {
+  width: 1px;
+  align-self: stretch;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.avail-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.avail-copy strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.avail-copy span {
+  font-size: 12.5px;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--faint);
+  line-height: 1.3;
 }
 
 .status-dot {
@@ -449,6 +491,7 @@ svg.fill {
   height: 8px;
   border-radius: 50%;
   background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
 }
 
 .status-dot::after {
@@ -464,6 +507,22 @@ svg.fill {
 @keyframes ping {
   0% { transform: scale(0.6); opacity: 0.35; }
   100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (max-width: 520px) {
+  .avail-card {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .avail-divider {
+    display: none;
+  }
+
+  .avail-live {
+    padding-top: 2px;
+  }
 }
 
 .hero-name {
